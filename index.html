@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- GOOGLE ANALYTICS FROM JESSE'S ACCOUNT -->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C13RWLVS89"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C13RWLVS89');
+</script>
+
+<!-- END OF GOOGLE ANALYTICS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mowing Spring Hill</title>
+    <!-- TRYING SEO -->
+    <meta name="description" content="Mowing Spring Hill is dedicated to connecting you with top-notch lawn maintenance services to both residential and commericial clients! Keep your yard looking great with Mowing Spring Hill! Fill out the form below and we'll schedule a service at your convenience!">
+    <meta name="keywords" content="Spring Hill lawn mowing, lawn mowing services Spring Hill, affordable lawn mowing Spring Hill, professional lawn mowing Spring Hill, grass cutting Spring Hill, Spring Hill lawn care, schedule lawn care, schedule mowing, scheduling mowing, scheduling lawn care, spring hill yard services">
+    <!-- END OF TRYING SEO DELETE ALL THIS IF IT DOESN"T WORK-->
+    <style>
+        body {
+            background: url('./mowing-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .email-form {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+        .email-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .email-form input,
+        .email-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .email-form button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .email-form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <font color="#fff">
+        <h1>Reliable Mowing & Yard Maintenance in Spring Hill, TN</h1>
+        <p>Mowing Spring Hill is dedicated to connecting you with top-notch lawn maintenance services to both residential and commericial clients! Keep your yard looking great with Mowing Spring Hill! Fill out the form below and we'll schedule a service at your convenience!</p>
+        </font>
+
+    </div>
+
+    <div class="email-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            // Submit to Google Forms
+            const googleFormId = '1mPnhTq6UmjJZHwLvJK2_ZoC6lXErciu_Qm3SqOEAhyk';
+            const googleFormUrl = `https://docs.google.com/forms/d/${googleFormId}/formResponse`;
+            const data = new FormData();
+            data.append('entry.1418262119', name);
+            data.append('entry.1334011418', email);
+            data.append('entry.1610446824', address);
+            data.append('entry.2085826584', phone);
+
+
+            fetch(googleFormUrl, {
+                method: 'POST',
+                body: data,
+                mode: 'no-cors'
+            }).then(() => {
+                alert('Form submitted to Google Sheets successfully');
+            }).catch(error => {
+                alert('There was an error submitting the form');
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>
